@@ -1,49 +1,71 @@
-# lightningjs
+# Recipe Explorer (LightningJS / Blits)
 
-### lightningjs
+Modern web UI to browse, search, and view recipes. Built with Lightning 3 (Blits) using the Ocean Professional theme.
 
+## Quick start
 
-Welcome to the _lightningjs_ Lightning 3 Blits App!
-
-### Getting started
-
-Follow the steps below to get your Lightning 3 Blits App up and running in no time.
-
-#### IDE setup
-
-It is highly recommended to install the Blits [VS-code extension](https://marketplace.visualstudio.com/items?itemName=LightningJS.lightning-blits) which will give you template highlighting and improved autocompletion.
-
-#### Project setup
-
-Run the following command to install the dependencies of your App:
-
+1) Install dependencies
 ```sh
 npm install
 ```
 
-#### Build and run in development mode
-
-Run your App in development mode:
-
+2) Run in development (Vite on port 3000)
 ```sh
 npm run dev
 ```
 
-This command uses Vite to fire up a local server, with Hot Reloading support. Visit the provided link in your web browser to see the App in action.
+Open the dev URL in your browser. The app will boot without runtime errors.
 
-#### Build the App for production
+## Environment configuration
 
-Create an optimized and minified version of your App:
+The app reads API base URL from Vite env variables. If `VITE_API_BASE` is not set or the API is unavailable, the app uses local mock data and logs a warning.
+
+- Copy `.env.example` to `.env` and set values as needed.
+- Minimum configuration to use a backend:
+```
+VITE_API_BASE=https://your-backend.example.com
+```
+
+Available variables:
+- VITE_API_BASE, VITE_BACKEND_URL, VITE_FRONTEND_URL, VITE_WS_URL, VITE_NODE_ENV, VITE_NEXT_TELEMETRY_DISABLED,
+  VITE_ENABLE_SOURCE_MAPS, VITE_PORT, VITE_TRUST_PROXY, VITE_LOG_LEVEL, VITE_HEALTHCHECK_PATH, VITE_FEATURE_FLAGS, VITE_EXPERIMENTS_ENABLED
+
+## Features
+
+- Header with title and navigation chip
+- Search bar (type and press Enter)
+- Grid of recipe cards (mock data by default)
+- Client-side filtering of recipes when typing a query
+- Detail modal with title, image, ingredients, and steps
+- Routing for Home `/` and Details `/details/:id`
+- Keyboard navigation (arrows to move focus, Enter to select, Back to close modal)
+
+## Theme
+
+Ocean Professional palette:
+- Primary: #2563EB
+- Secondary: #F59E0B
+- Error: #EF4444
+- Background: #f9fafb
+- Surface: #ffffff
+- Text: #111827
+
+Styling uses rounded corners, subtle shadows, and clean typography via Lightning primitives (no DOM/CSS).
+
+## Notes on Input
+
+Lightning/Blits handles input via component `input` objects. Key mappings are configured by Blits; unhandled input bubbles up the component tree. Use arrows to navigate the grid, Enter to open details, and Back to close.
+
+## Build for production
 
 ```sh
 npm run build
 ```
 
-This will create a production version of the app in the `dist` folder.
+The optimized app will be in `dist/`.
 
+## Resources
 
-### Resources
-
-- [Blits documentation](https://lightningjs.io/v3-docs/blits/getting_started/intro.html) - official documentation
-- [Blits Example App](https://blits-demo.lightningjs.io/?source=true) - a great reference to learn by example
-- [Blits Components](https://lightningjs.io/blits-components.html) - off-the-shelf, basic and performant reference components
+- [Blits documentation](https://lightningjs.io/v3-docs/blits/getting_started/intro.html)
+- [Blits Example App](https://blits-demo.lightningjs.io/?source=true)
+- [Blits Components](https://lightningjs.io/blits-components.html)

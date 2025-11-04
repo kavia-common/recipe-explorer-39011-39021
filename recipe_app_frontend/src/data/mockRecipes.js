@@ -1,0 +1,63 @@
+export const mockRecipes = [
+  {
+    id: 'rec-1',
+    title: 'Lemon Garlic Salmon',
+    image: '/assets/mock/salmon.jpg',
+    summary: 'Tender salmon with lemon and garlic butter.',
+    ingredients: [
+      '2 salmon fillets',
+      '2 cloves garlic, minced',
+      '2 tbsp butter',
+      '1 lemon (zest and juice)',
+      'Salt & pepper',
+      'Fresh parsley',
+    ],
+    steps: [
+      'Preheat oven to 400°F (200°C).',
+      'Melt butter, add garlic, lemon zest and juice.',
+      'Place salmon on tray, season with salt & pepper.',
+      'Brush with lemon garlic butter.',
+      'Bake 12–15 minutes until flaky. Garnish with parsley.',
+    ],
+  },
+  {
+    id: 'rec-2',
+    title: 'Creamy Mushroom Pasta',
+    image: '/assets/mock/pasta.jpg',
+    summary: 'Rich mushroom cream sauce over al dente pasta.',
+    ingredients: [
+      '8 oz pasta',
+      '2 cups mushrooms, sliced',
+      '1 cup cream',
+      '2 cloves garlic, minced',
+      '2 tbsp olive oil',
+      'Parmesan, salt & pepper',
+    ],
+    steps: [
+      'Cook pasta until al dente.',
+      'Sauté mushrooms in olive oil, add garlic.',
+      'Pour in cream and simmer until thickened.',
+      'Toss pasta with sauce, season and top with parmesan.',
+    ],
+  },
+  {
+    id: 'rec-3',
+    title: 'Caprese Salad',
+    image: '/assets/mock/caprese.jpg',
+    summary: 'Fresh tomatoes, mozzarella, basil, and balsamic.',
+    ingredients: [
+      'Tomatoes, sliced',
+      'Fresh mozzarella, sliced',
+      'Fresh basil leaves',
+      'Extra virgin olive oil',
+      'Balsamic glaze',
+      'Salt & pepper',
+    ],
+    steps: [
+      'Layer tomato and mozzarella slices.',
+      'Add basil leaves.',
+      'Drizzle with olive oil and balsamic glaze.',
+      'Season with salt and pepper.',
+    ],
+  },
+]
